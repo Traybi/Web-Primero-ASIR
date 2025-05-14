@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sobrenosotrosCSS.css">
+    
+    <title>Sobre Nosotros</title>
+ 
+</head>
+<body>
+    
+    <header>
+        <h1>Sobre Nosotros</h1>
+    </header>
+    <div class="container">
+        <h2>Dirección</h2>
+        <p>Av. de Fernando Alonso, 8, 28108 Alcobendas, Madrid</p>
+
+        <h2>Mapa</h2>
+        <div class="mapa">
+            <!-- Mapa de Google -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6064.584975155942!2d-3.6187895241261767!3d40.535126771420735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422da995a9e6ab%3A0x3dd2d61b103821da!2sUniversidad%20Europea%20de%20Madrid%20(Campus%20de%20Alcobendas)!5e0!3m2!1ses!2ses!4v1733389707320!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="container">
+            <h2>Horario</h2>
+            
+                <table border="5" cellspacing="0" cellpadding="5" width="100%" >
+                    <caption> Mañanas </caption>
+                <thead>
+                    
+                    <tr bgcolor="#F5F5DC" cellpadding="5" height="40">
+                    
+                    <th width="15%">Lunes</th>
+                    <th width="15%">Martes</th>
+                    <th width="15%">Miércoles</th>
+                    <th width="15%">Jueves</th>
+                    <th width="15%">Viernes</th>
+                
+                </tr>
+                </thead>
+
+                <tbody>
+                    <td>9:00 - 1:30</td>
+                    <td>9:00 - 14:30</td>
+                    <td>9:00 - 14:30</td>
+                    <td>9:00 - 14:30</td>
+                    <td>9:00 - 14:30</td>
+                </tbody>
+            
+                </table>
+
+                <br>
+
+                <table border="5" cellspacing="0" cellpadding="10" width="100%" >
+                    <caption> Tardes </caption>
+                    
+                <thead>
+                    <tr bgcolor="#F5F5DC" cellpadding="5" height="40">
+                    
+                    <th width="15%">Lunes</th>
+                    <th width="15%">Martes</th>
+                    <th width="15%">Miércoles</th>
+                    <th width="15%">Jueves</th>
+                    <th width="15%">Viernes</th>
+                
+                </tr>
+                </thead>
+
+                <tbody>
+                    <td>16:00 - 21:30</td>
+                    <td>16:00 - 21:30</td>
+                    <td>16:00 - 21:30</td>
+                    <td>16:00 - 21:30</td>
+                    <td>16:00 - 21:30</td>
+                </tbody>
+            
+                </table>
+            </div>
+            <br><br>
+            
+               
+            <div class="container">
+                <h2>Presentacion</h2>
+                
+                <div class="video-container">
+                    <video controls>
+                        <source src="Fashion Film by Azul Oscuro Producciones.mp4" type="video/mp4">
+                       
+                    </video>
+                </div>
+                <div class="container1">
+                    <div class="box">
+                        <h2>Calidad</h2>
+                        <p>Productos de alto estándar.</p>
+                    </div>
+                    <div class="box">
+                        <h2>Experiencia</h2>
+                        <p>Años de trabajo nos respaldan para ofrecerte el mejor servicio posible.</p>
+                    </div>
+                    <div class="box">
+                        <h2>Garantía</h2>
+                        <p>Respaldamos tus compras con una garantía total de satisfacción.</p>
+                    </div>
+                </div>
+                </div>
+
+                <br><br>
+
+                <div class="container2">
+                    <h2>Ruta Secreta</h2>
+                    <p>¿Realmente eres un amante de nuestra marca? ¿Quieres conocer más sobre nosotros?</p>
+                    <p>Descubre nuestro apartado secreto, solo para conocedores de la marca.</p>
+                    <button id="btnPasillo">Pasillo Secreto</button>
+                </div>
+
+                <div class="container hidden" id="secreto">
+                    <h2>Has desbloqueado el pasillo secreto</h2>
+                    <button id="btnMapa">Ver Mapa</button>
+                    <button id="btnVideo" >Ver Video</button>
+                    <button id="btnOutfit" >Ver Outfit Secreto</button>
+                    <button id="btnColorFondo">Cambiar a Color Secreto </button>
+                    <button id="btnFecha" >Mostrar Fecha Fundacion</button>
+                    <button id="btnDescuento" >Aplicar Descuento de Fundador</button>
+                    <button id="btnCerrar">Cerrar Pasillo</button>
+                    
+                    <div id="contenido"></div>
+                </div>
+                <script src="sobrenosotrosJS.js"></script>
+        </body>
+        </html>

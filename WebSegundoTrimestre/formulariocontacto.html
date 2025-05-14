@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="formulariocontactoCSS.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Formulario de Contacto</h1>
+        <form id="formulario-compra" onsubmit="return validarFormulario()">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="nombre">Nombre </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" onblur="validarCampo(this)">
+                <span class="mensaje-error" id="error-nombre"></span>
+                
+                <label for="apellido">Apellido </label>
+                <input type="text" id="apellido" name="apellido" placeholder="Introduce tu apellido" onblur="validarCampo(this)">
+                <span class="mensaje-error" id="error-apellido"></span>
+                
+                <label for="correo">Correo Electrónico </label>
+                <input type="text" id="correo" name="correo" placeholder="ejemplo@correo.com" onblur="validarCampo(this)">
+                <span class="mensaje-error" id="error-correo"></span>
+                
+                <label for="telefono">Teléfono </label>
+                <input type="text" id="telefono" name="telefono" placeholder="Ej: 123456789" value="+34 " onblur="validarCampo(this)">
+                <span class="mensaje-error" id="error-telefono"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Selecciona tu género </legend>
+                <div class="opcion-genero">
+                    <input type="radio" id="genero-m" name="genero" value="Masculino">
+                    <label for="genero-m">Masculino</label>
+                </div>
+                <div class="opcion-genero">
+                    <input type="radio" id="genero-f" name="genero" value="Femenino">
+                    <label for="genero-f">Femenino</label>
+                </div>
+                <span class="mensaje-error" id="error-genero"></span>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Comentarios Adicionales</legend>
+                <label for="comentarios">Comentarios</label>
+                <textarea id="comentarios" name="comentarios" rows="5" maxlength="250" oninput="actualizaInfo(250)" onblur="validarCampo(this)"></textarea>
+                <p id="info">Máximo de 250 caracteres</p>
+                <span class="mensaje-error" id="error-comentarios"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ciudad</legend>
+                <label for="opciones">Selecciona una ciudad</label>
+                <select id="opciones" name="opciones">
+                    <option value="">Seleccione...</option>
+                    <option value="opcion1">Madrid</option>
+                    <option value="opcion2">Barcelona</option>
+                </select>
+                <span class="mensaje-error" id="error-opciones"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Confirmación</legend>
+                <input type="checkbox" id="condiciones"> 
+                <label for="condiciones">Acepto los términos y condiciones</label>
+                <span class="mensaje-error" id="error-condiciones"></span>
+            </fieldset>
+
+            <div class="botones">
+                <button type="submit">Enviar</button>
+                <button type="reset">Restablecer</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="validacion.js"></script>
+</body>
+</html>

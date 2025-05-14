@@ -1,0 +1,154 @@
+h1{
+    text-align: center;
+}
+h1.fuente1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 100px;
+    letter-spacing: 35px;
+}
+.enlacescentro{
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px 0;
+    position: relative;
+    padding-bottom: 40px;
+}
+a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 18px;
+}
+.contenedor {
+    background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
+    padding-top: 5px;
+    margin-bottom: 50px;
+}
+.catalogofila1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.catalogofila2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.catalogofila3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.productofila1{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+}
+.productofila1 img {
+    width: 100%;
+    height: 75%;
+    border-radius: 8px;
+}
+.productofila1 h3 {
+    margin: 10px;
+    font-size: 30px;
+    color: #333;
+}
+.productofila1 desc {
+    color: #666;
+    font-size: 28px;
+}
+.productofila1 a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: grey;
+    color: #fff;
+    border-radius: 5px;
+}
+.productofila2{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+}
+.productofila2 img {
+    width: 100%;
+    height: 75%;
+    border-radius: 8px;
+}
+.productofila2 h3 {
+    margin: 10px;
+    font-size: 30px;
+    color: #333;
+}
+.productofila2 desc {
+    color: #666;
+    font-size: 28px;
+}
+.productofila2 a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: grey;
+    color: #fff;
+    border-radius: 5px;
+}
+.productofila3{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+}
+.productofila3 img {
+    width: 100%;
+    height: 75%;
+    border-radius: 8px;
+}
+.productofila3 h3 {
+    margin: 10px;
+    font-size: 30px;
+    color: #333;
+}
+.productofila3 desc {
+    color: #666;
+    font-size: 28px;
+}
+.productofila3 a {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: grey;
+    color: #fff;
+    border-radius: 5px;
+}
+#btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #222; 
+    color: white;
+    border: none;
+    border-radius: 8px; 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 22px;
+    text-align: center;
+}

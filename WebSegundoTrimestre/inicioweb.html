@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo Sin Limites</title>
+</head>
+<body>
+    <link rel="stylesheet" href="iniciowebcss.css">
+    <button id="btn-top" onclick="window.scrollTo(0, 0)">⬆</button>
+    <script>
+    window.onscroll = function() {
+        var btn = document.getElementById("btn-top");
+        if (window.pageYOffset > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+
+    window.onload = mostrarOfertaEspecial;
+    function mostrarOfertaEspecial() {
+        setTimeout(function() {
+            alert("¡SOLO HOY! 20% de descuento en toda la tienda usando el código BIENVENIDA20");
+        }, 5000);
+    }
+
+    setTimeout(function() {
+        const userChoice = confirm("¡Ha pasado un minuto! ¿Deseas cerrar esta página?");
+        if (userChoice) {
+        window.location.href = "logout.html";
+        }
+    }, 10000);
+    function toggleMenu() {
+        var menu = document.getElementById("menu-links");
+        menu.classList.toggle("open");
+    }
+    function toggleSubmenu() {
+        var submenu = document.getElementById("submenu");
+        submenu.classList.toggle("open");
+    }
+    </script>
+    <div class="contenedor">
+        <h1 class="fuente1">Estilo Sin Limites</h1>
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-links" id="menu-links">
+            <a href="inicioweb.html">Inicio</a>
+            <a href="javascript:void(0);" onclick="toggleSubmenu()">Productos</a>
+            <div class="submenu" id="submenu">
+                <a href="productos-hombre.html">Hombres</a>
+                <a href="productos-mujer.html">Mujeres</a>
+                <a href="productos-ni�o.html">Niños</a>
+            </div>
+            <a href="formulariocontacto.html" target="_blank">Contacto</a>
+            <a href="sobrenosotros.html">Sobre Nosotros</a>
+        </div>
+        <nav>
+            <a href="inicioweb.html">Inicio</a>
+            <a href="productosweb.html">Productos</a>
+            <a href="formulariocontacto.html" target="_blank">Contacto</a>
+            <a href="sobrenosotros.html">Sobre Nosotros</a>
+            <a href="index.php">Admin</a>
+        </nav>
+    </div>
+    <div class="mini-message">
+        <span>ENTREGA RÁPIDA</span>
+        <span>PRODUCTOS DE CALIDAD</span>
+        <span>BAJOS PRECIOS</span>
+    </div>
+    <div class="content">
+        <div class="section welcome">
+            <h2>Bienvenido a nuestra tienda</h2>
+            <p>Explora nuestra exclusiva colección de moda diseñada para cada ocasión. ¡Encuentra tu estilo hoy!</p>
+        </div>
+
+        <div class="categories">
+            <div class="category">
+                <a href="productos-hombre.html"><img src="fotos_inicio/ropa hombre.avif" alt="Hombres"></a>
+                <p>Hombres</p>
+            </div>
+            <div class="category">
+                <a href="productos-mujer.html"><img src="fotos_inicio/foto mujer.jpg" alt="Mujeres"></a>
+                <p>Mujeres</p>
+            </div>
+            <div class="category">
+                <a href="productos-ni�o.html"><img src="fotos_inicio/foto ropa ni�o.jpg" alt="Niños"></a>
+                <p>Niños</p>
+            </div>
+        </div>
+
+        <div class="banner">
+            ¡Descubre nuestras ofertas exclusivas y viste con estilo único!
+        </div>
+
+        <div class="section featured-products">
+            <h2 class="section-title">Las Colecciones Más Vendidas</h2>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <a href="productosweb.html"><img src="images/blusarosa.jpg" alt="Producto 1"></a>
+                </div>
+                <div class="flex-item">
+                    <a href="productosweb.html"><img src="images/sudadera2.webp" alt="Producto 2"></a>
+                </div>
+                <div class="flex-item">
+                    <a href="productosweb.html"><img src="images/cuello alto.webp" alt="Producto 3"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section testimonials">
+            <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            <div class="testimonial">
+                "Me encantaron los productos, la calidad es excepcional y el servicio es excelente. ¡Volveré a comprar!" 
+                <br> - Sandra M.
+            </div>
+            <div class="testimonial">
+                "La atención al cliente fue excelente, me ayudaron a elegir la prenda perfecta. ¡Muy recomendable!"
+                <br> - Alberto J.
+            </div>
+        </div>
+        <p class="cta">¿Tienes preguntas? Estamos aquí para ayudarte. 
+        <a href="formulariocontacto.html" class="contact-link">¡Contáctanos!</a>.</p>
+    </div>
+</body>
+</html>

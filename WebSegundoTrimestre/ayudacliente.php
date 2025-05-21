@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantalla Finalizar Compra</title>
-</head>
-<body>
-    <link rel="stylesheet" href="ayudaclientecss.css">
-    <div class="contenido">
-        <h1>¡Gracias por contactar con nosotros. En breves le responderemos!</h1>
-        <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
-    </div>
-</body>
-</html>
-
 <?php
 $usuario = "root";
 $contraseña = "";
@@ -43,3 +27,19 @@ if (isset($_POST['ayudacliente'])) {
     mysqli_close($connection);
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla Finalizar Compra</title>
+</head>
+<body>
+    <link rel="stylesheet" href="ayudaclientecss.css">
+    <div class="contenido">
+        <h1>¡Gracias por contactar con nosotros. En breves le responderemos!</h1>
+        <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
+    </div>
+</body>
+</html>

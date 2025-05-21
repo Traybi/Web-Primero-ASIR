@@ -69,7 +69,6 @@
     </form>
 
     <script>
-        // Agregar validación en tiempo real cuando el usuario abandona un campo
         document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
         document.getElementById('correo').addEventListener('blur', validarCorreo);
@@ -78,13 +77,11 @@
         document.getElementById('cantidad').addEventListener('blur', validarCantidad);
         document.getElementById('terminos').addEventListener('change', validarTerminos);
         
-        // Agregar validación para los radio buttons de método de pago
         let metodosPago = document.getElementsByName('pago');
         for (let i = 0; i < metodosPago.length; i++) {
             metodosPago[i].addEventListener('change', validarMetodoPago);
         }
 
-        // Agregar validación al enviar el formulario
         document.getElementById('formulario-compra').addEventListener('submit', validarFormulario);
 
         function validarNombre() {

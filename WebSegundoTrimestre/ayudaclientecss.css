@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    }
+        
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    }
+
+.contenido {
+    text-align: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+h1 {
+    color: #333;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+button:hover {
+    background-color: #818283;
+    transform: translateY(-3px);
+}

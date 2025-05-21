@@ -266,7 +266,7 @@ if (isset($_POST['ayudacliente'])) {
     $telefono = mysqli_real_escape_string($connection, $_POST["telefono"]);
     $genero = mysqli_real_escape_string($connection, $_POST["genero"]);
     $comentarios = mysqli_real_escape_string($connection, $_POST["comentarios"]);
-    $ciudad = mysqli_real_escape_string($connection, $_POST["ciudad"]);
+    $ciudad = mysqli_real_escape_string($connection, $_POST["opciones"]);
 
     $insertarDatos = "INSERT INTO ayudacliente (nombre, apellido, email, telefono, genero, comentarios, ciudad) 
                     VALUES ('$nombre', '$apellido', '$email', '$telefono', '$genero', '$comentarios', '$ciudad')";

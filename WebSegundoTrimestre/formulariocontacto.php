@@ -252,41 +252,32 @@
     </script>
 </body>
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['ayudacliente'])) {
-    $usuario = "root";
-    $contraseña = "";
-    $servidor = "localhost";
-    $base_datos = "tiendaderopa";
+$usuario = "root";
+$contraseña = "";
+$servidor = "localhost";
+$base_datos = "tiendaderopa";
 
-    // Crear conexión
-    $enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos);
+$connection = mysqli_connect($servidor, $usuario, $contraseña, $base_datos) or die("Error de conexión: " . mysqli_connect_error());
 
-    // Verificar conexión
-    if (!$enlace) {
-        die("Error de conexión: " . mysqli_connect_error());
-    }
+if (isset($_POST['ayudacliente'])) {
+    $nombre = mysqli_real_escape_string($connection, $_POST["nombre"]);
+    $apellido = mysqli_real_escape_string($connection, $_POST["apellido"]);
+    $email = mysqli_real_escape_string($connection, $_POST["email"]);
+    $telefono = mysqli_real_escape_string($connection, $_POST["telefono"]);
+    $genero = mysqli_real_escape_string($connection, $_POST["genero"]);
+    $comentarios = mysqli_real_escape_string($connection, $_POST["comentarios"]);
+    $ciudad = mysqli_real_escape_string($connection, $_POST["ciudad"]);
 
-    // Sanitizar entradas para prevenir inyección SQL
-    $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
-    $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
-    $email = mysqli_real_escape_string($enlace, $_POST["email"]);
-    $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
-    $genero = mysqli_real_escape_string($enlace, $_POST["genero"]);
-    $comentarios = mysqli_real_escape_string($enlace, $_POST["comentarios"]);
-    $ciudad = mysqli_real_escape_string($enlace, $_POST["opciones"]);
-    $condiciones = isset($_POST["condiciones"]) ? 1 : 0;
+    $insertarDatos = "INSERT INTO ayudacliente (nombre, apellido, email, telefono, genero, comentarios, ciudad) 
+                    VALUES ('$nombre', '$apellido', '$email', '$telefono', '$genero', '$comentarios', '$ciudad')";
 
-    // Consulta SQL para insertar datos
-    $insertarDatos = "INSERT INTO contactos (nombre, apellido, email, telefono, genero, comentarios, ciudad, condiciones) 
-                   VALUES ('$nombre', '$apellido', '$email', '$telefono', '$genero', '$comentarios', '$ciudad', '$condiciones')";
-
-    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+    $ejecutarInsertar = mysqli_query($connection, $insertarDatos) or die("Error de inserción: " . mysqli_error($connection));
     
     if($ejecutarInsertar) {
-        echo "<script>alert('¡Formulario enviado correctamente!');</script>";
+        echo "<script>alert('¡Datos insertados correctamente!');</script>";
     }
     
-    mysqli_close($enlace);
+    mysqli_close($connection);
 }
 ?>
 </html>

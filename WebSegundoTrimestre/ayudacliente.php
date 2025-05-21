@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="ayudaclientecss.css">
     <div class="contenido">
         <h1>¡Gracias por contactar con nosotros. En breves le responderemos!</h1>
-        <p>Su pedido ha sido procesado correctamente</p>
         <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
     </div>
 </body>
 </html>
-
-
 
 <?php
 $usuario = "root";
@@ -34,7 +31,7 @@ if (isset($_POST['ayudacliente'])) {
     $comentarios = mysqli_real_escape_string($connection, $_POST["comentarios"]);
     $ciudad = mysqli_real_escape_string($connection, $_POST["ciudad"]);
 
-    $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, genero, comentarios, ciudad) 
+    $insertarDatos = "INSERT INTO ayudacliente (nombre, apellido, email, telefono, genero, comentarios, ciudad) 
                     VALUES ('$nombre', '$apellido', '$email', '$telefono', '$genero', '$comentarios', '$ciudad')";
 
     $ejecutarInsertar = mysqli_query($connection, $insertarDatos) or die("Error de inserción: " . mysqli_error($connection));

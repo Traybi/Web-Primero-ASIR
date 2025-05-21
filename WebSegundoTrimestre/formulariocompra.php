@@ -119,7 +119,7 @@
                 mostrarError('correo', 'error-correo', 'El correo electrónico es obligatorio.');
                 return false;
             } else if (!correoRegex.test(correo)) {
-                mostrarError('correo', 'error-correo', 'Formato inválido. Debe ser ejemplo@ejemplo.com');
+                mostrarError('correo', 'error-correo', 'Formato inválido. Debe ser ejemplo@ejemplo.com.');
                 return false;
             } else {
                 limpiarError('correo', 'error-correo');
@@ -249,7 +249,6 @@ $base_datos = "tiendaderopa";
 $enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos);
 
 if (isset($_POST['registro'])) {
-    // Sanitizar entradas para prevenir inyección SQL
     $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
     $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
     $email = mysqli_real_escape_string($enlace, $_POST["email"]);

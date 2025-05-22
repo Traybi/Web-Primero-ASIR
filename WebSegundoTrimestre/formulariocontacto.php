@@ -56,13 +56,13 @@
 
             <fieldset>
                 <legend>Ciudad</legend>
-                <label for="opciones">Selecciona una ciudad</label>
-                <select id="opciones" name="opciones">
+                <label for="ciudad">Selecciona una ciudad</label>
+                <select id="ciudad" name="ciudad">
                     <option value="">Seleccione...</option>
                     <option value="Madrid">Madrid</option>
                     <option value="Barcelona">Barcelona</option>
                 </select>
-                <p class="error-message" id="error-opciones">Debes seleccionar una ciudad.</p>
+                <p class="error-message" id="error-ciudad">Debes seleccionar una ciudad.</p>
             </fieldset>
 
             <fieldset>

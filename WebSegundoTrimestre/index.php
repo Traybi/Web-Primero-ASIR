@@ -21,7 +21,6 @@
             $registros = mysqli_query($conexion, $consultar) or die("Error al insertar el registro" . mysqli_error($conexion));
         ?>
 
-        <!-- Creación de la tabla con los datos extraídos de la tabla 'pedidos' de la base de datos 'ejemplo'-->
         <h2>Eliminar Producto</h2>
         <table border="2">
             <thead>
@@ -40,8 +39,6 @@
 
             <tbody>
                 <?php
-                    //Recorrer los registros de '$registros', uno a uno, hasta
-                    //que no haya más y se van almacenando en el array '$unRegistro'
                     while($unRegistro = mysqli_fetch_row($registros)){
                 ?>
                 <tr>
@@ -112,6 +109,64 @@
                     <td><?php echo $unRegistro[7];?></td>
                     <td><?php echo $unRegistro[8];?></td>
                     <td> <a href="modifica.php?id=<?php echo $unRegistro[0];?>"><img src="images/lapiz.webp" height="30px" width="30px"/></a></td>
+                </tr>
+                <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+
+
+        <?php
+            // Conexión a la base de datos
+            include("IndexConexion.php");
+
+            //Selección de la base de datos
+            mysqli_select_db($conexion, "tiendaderopa");
+
+            //Preparar sentencia MySQL
+            $consultar = "SELECT * FROM ayudacliente";
+
+            //Ejecutar sentencia y se almacena en la variables '$registros'
+            $registros = mysqli_query($conexion, $consultar) or die("Error al insertar el registro" . mysqli_error($conexion));
+        ?>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>Ayuda Cliente</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Género</th>
+                    <th>Comentarios</th>
+                    <th>Ciudad</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+                    //Recorrer los registros de '$registros', uno a uno, hasta
+                    //que no haya más y se van almacenando en el array '$unRegistro'
+                    while($unRegistro = mysqli_fetch_row($registros)){
+                ?>
+                <tr>
+                    <td><?php echo $unRegistro[0];?></td>
+                    <td><?php echo $unRegistro[1];?></td>
+                    <td><?php echo $unRegistro[2];?></td>
+                    <td><?php echo $unRegistro[3];?></td>
+                    <td><?php echo $unRegistro[4];?></td>
+                    <td><?php echo $unRegistro[5];?></td>
+                    <td><?php echo $unRegistro[6];?></td>
+                    <td><?php echo $unRegistro[7];?></td>
+                    <td><?php echo $unRegistro[8];?></td>
+                    <td> <a href="modifica.php?id=<?php echo $unRegistro[0];?>"><img src="images/tickresuelto" height="30px" width="30px"/></a></td>
                 </tr>
                 <?php
                     }

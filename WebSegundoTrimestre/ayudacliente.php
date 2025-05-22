@@ -14,14 +14,15 @@ if (isset($_POST['ayudacliente'])) {
     $genero = mysqli_real_escape_string($connection, $_POST["genero"]);
     $comentarios = mysqli_real_escape_string($connection, $_POST["comentarios"]);
     $ciudad = mysqli_real_escape_string($connection, $_POST["ciudad"]);
+    $estado = "procesando";
 
-    $insertarDatos = "INSERT INTO ayudacliente (nombre, apellido, email, telefono, genero, comentarios, ciudad) 
-                    VALUES ('$nombre', '$apellido', '$email', '$telefono', '$genero', '$comentarios', '$ciudad')";
+    $insertarDatos = "INSERT INTO ayudacliente (nombre, apellido, email, telefono, genero, comentarios, ciudad, estado) 
+                    VALUES ('$nombre', '$apellido', '$email', '$telefono', '$genero', '$comentarios', '$ciudad', '$estado')";
 
     $ejecutarInsertar = mysqli_query($connection, $insertarDatos) or die("Error de inserción: " . mysqli_error($connection));
     
     if($ejecutarInsertar) {
-        echo "<script>alert('¡Datos insertados correctamente!');</script>";
+        echo "<script>alert('¡Consulta Enviada!');</script>";
     }
     
     mysqli_close($connection);

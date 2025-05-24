@@ -9,12 +9,12 @@
         <?php
             include("IndexConexion.php");
             mysqli_select_db($conexion, "tiendaderopa");
-            $modificarPedido = $_GET["id"];
+            $modificarEstado = $_GET["id"];
             $estado = "resuelto";
             
-            $modificar = "UPDATE ayudacliente SET Estado='$estado' WHERE id = '$modificarPedido'";
+            $modificarcli = "UPDATE ayudacliente SET Estado='$estado' WHERE id = '$modificarEstado'";
 
-            mysqli_query($conexion, $modificar) or die("Error de inserción: " . mysqli_error($conexion));
+            mysqli_query($conexion, $modificarcli) or die("Error de inserción: " . mysqli_error($conexion));
             header("Location: index.php"); // Redirigir a la página de consulta
         ?>
     </body>

@@ -13,8 +13,8 @@
             
             $eliminar = "DELETE FROM pedidos WHERE id = '$eliminarPedido'";
 
-            mysqli_query($conexion, $eliminar); // or die("Error de inserción: " . mysqli_error($conexion));
-            header("Location: http://localhost/WebSegundoTrimestre/index.php"); // Redirigir a la página de consulta
+            mysqli_query($conexion, $eliminar);
+            header("Location: http://localhost/WebSegundoTrimestre/index.php");
         ?>
     </body>
 </html>

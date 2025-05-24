@@ -26,16 +26,18 @@ h2 {
 }
 
 table {
-    width: 80%;
+    width: 85%;
     border-collapse: collapse;
     margin: 20px auto;
     font-size: 18px;
+    table-layout: auto;
 }
 
 td, th {
     text-align: center;
     padding: 10px;
     border: 2px solid #000;
+    white-space: nowrap;
 }
 
 th {
@@ -49,12 +51,12 @@ th {
     border-radius: 50px;
     cursor: pointer;
     font-size: 19px;
-    display: inline-block; /* Agrega esto */
-    text-align: center; /* Agrega esto */
-    line-height: 1.2; /* Ajusta el espaciado vertical del texto */
-    vertical-align: middle; /* Centra verticalmente */
-    white-space: nowrap; /* Evita que el texto se rompa en líneas */
-    transition: all 0.3s ease; /* Mejora la transición */
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
 .volverinicio:hover {

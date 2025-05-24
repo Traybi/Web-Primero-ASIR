@@ -26,22 +26,26 @@ h2 {
 }
 
 table {
-    width: 85%;
-    border-collapse: collapse;
-    border-spacing: 9px;
-    margin: 20px auto;
-    font-size: 18px;
-    table-layout: auto;
-    max-width: 900px;
-    border-collapse: collapse;
+  width: 100%;
+  max-width: 950px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  table-layout: fixed; /* clave para controlar el ancho de columnas */
 }
 
-td, th {
-    text-align: center;
-    padding: 10px;
-    border: 2px solid #000;
-    white-space: nowrap;
-    word-break: break-word;
+th, td {
+  border: 1.5px solid #333;
+  padding: 10px 6px;
+  text-align: center;
+  word-break: break-word; /* fuerza el salto de línea en palabras largas */
+  white-space: pre-line;  /* respeta saltos de línea */
+}
+
+td:nth-child(6), th:nth-child(6) {
+  max-width: 220px;    /* ajusta según lo que necesites */
+  min-width: 120px;
+  overflow-wrap: break-word; /* fuerza el salto de línea en cadenas largas */
 }
 
 th {

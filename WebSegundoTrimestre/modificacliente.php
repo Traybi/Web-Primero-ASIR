@@ -12,7 +12,7 @@
             $modificarEstado = $_GET["id"];
             $estado = "resuelto";
             
-            $modificarcli = "UPDATE ayudacliente SET Estado='$estado' WHERE id = '$modificarEstado'";
+            $modificarcli = "UPDATE ayudacliente SET estado='$estado' WHERE id = '$modificarEstado'";
 
             mysqli_query($conexion, $modificarcli) or die("Error de inserción: " . mysqli_error($conexion));
             header("Location: index.php"); // Redirigir a la página de consulta

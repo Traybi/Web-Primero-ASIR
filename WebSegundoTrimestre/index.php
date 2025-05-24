@@ -8,28 +8,85 @@
     </head>
     <body>
         <?php
+        include("IndexConexion.php");
+
+        //Selecciona la base de datos
+        mysqli_select_db($conexion, "tiendaderopa") or die("Error de selección de base de datos: " . mysqli_error($conexion));
+    
+        //Crear datos para insertar en la tabla 
+        $nombre = "Administrador";
+        $fecha_acceso = date("d-m-Y H:i:s");
+        $accion = "Acceso al portal del administrador";
+        $ip = $_SERVER['REMOTE_ADDR']; // Obtener la IP del usuario
+        $navegador = $_SERVER['HTTP_USER_AGENT']; // Obtener el navegador del usuario
+
+        //Para evitar la inyección de SQL
+        //Prepara la estructura de la sentencia, que no cambia, solo cambian los datos
+        $sentencia = mysqli_prepare($conexion, "INSERT INTO logs_admin (nombre,fecha_acceso,accion,ip,navegador) VALUES (?,?,?,?,?)");
+    
+        if ($sentencia) {
+        //Se asignan los datos - CORRECCIÓN: usar $sentencia en lugar de $conexion
+        mysqli_stmt_bind_param($sentencia, "sssss", $nombre, $fecha_acceso, $accion, $ip, $navegador);
+        //Se ejecuta la sentencia.
+        mysqli_stmt_execute($sentencia);
+        //Cerrar la sentencia preparada
+        mysqli_stmt_close($sentencia);
+            } else {
+                die("Error al preparar la sentencia: " . mysqli_error($conexion));
+            }
+        ?>
+
+        <h1>Portal del Administrador</h1>
+        <br>
+        <br>
+        <div class="volverinicio">
+            <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
+        </div>
+        <br>
+        <br>
+        <?php
+            // Conexión a la base de datos
             include("IndexConexion.php");
 
-            //Selecciona la base de datos
-            mysqli_select_db($conexion, "tiendaderopa") or die("Error de selección de base de datos: " . mysqli_error($conexion));
-            
-            //Crear datos para insertar en la tabla 
-            $nombre = "Administrador";
-            $fecha_acceso = date("d-m-Y H:i:s");
-            $accion = "Acceso al portal del administrador";
-            $ip = $_SERVER['REMOTE_ADDR']; // Obtener la IP del usuario
-            $navegador = $_SERVER['HTTP_USER_AGENT']; // Obtener el navegador del usuario
+            //Selección de la base de datos
+            mysqli_select_db($conexion, "tiendaderopa");
 
-            //Para evitar la inyección de SQL
-            //Prepara la estructura de la sentencia, que no cambia, solo cambian los datos
-            $sentencia = mysqli_prepare($conexion, "INSERT INTO logs_admin (id,nombre,fecha_acceso,accion,ip,navegador) VALUES (?,?,?,?,?,?)");
-            //Se asignan los datos.
-            mysqli_stmt_bind_param($conexion, "ssss", $nombre,$fecha_acceso,$accion,$ip,$navegador);
-            //Se ejecuta la sentencia.
-            mysqli_stmt_execute($sentencia);
-            ?>
+            //Preparar sentencia MySQL
+            $consultar = "SELECT * FROM logs_admin";
 
+            //Ejecutar sentencia y se almacena en la variables '$registros'
+            $registros = mysqli_query($conexion, $consultar) or die("Error al insertar el registro" . mysqli_error($conexion));
+        ?>
+        <h2>Logs Admin</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha Acceso</th>
+                    <th>Accion</th>
+                    <th>IP</th>
+                    <th>Navegador</th>
+                </tr>
+            </thead>
 
+            <tbody>
+                <?php
+                    while($unRegistro = mysqli_fetch_row($registros)){
+                ?>
+                <tr>
+                    <td><?php echo $unRegistro[0];?></td>
+                    <td><?php echo $unRegistro[1];?></td>
+                    <td><?php echo $unRegistro[2];?></td>
+                    <td><?php echo $unRegistro[3];?></td>
+                    <td><?php echo $unRegistro[4];?></td>
+                    <td><?php echo $unRegistro[5];?></td>
+                </tr>
+                <?php
+                    }
+                ?>
+            </tbody>
+        </table>
         <?php
             // Conexión a la base de datos
             include("IndexConexion.php");
@@ -43,13 +100,6 @@
             //Ejecutar sentencia y se almacena en la variables '$registros'
             $registros = mysqli_query($conexion, $consultar) or die("Error al insertar el registro" . mysqli_error($conexion));
         ?>
-
-        <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
-        <br>
-        <br>
-        <h1>Portal del Administrador</h1>
-        <br>
-        <br>
         <h2>Eliminar Producto</h2>
         <table border="2">
             <thead>
@@ -214,12 +264,13 @@
         <script>
             window.onscroll = function() {
             var btn = document.getElementById("btn-top");
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 100) {
                 btn.style.display = "block";
             } else {
                 btn.style.display = "none";
             }
         };
         </script>
+    <button id="btn-top" onclick="window.scrollTo(0, 0)">⬆</button>
     </body>
 </html>

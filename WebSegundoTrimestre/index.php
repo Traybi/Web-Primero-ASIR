@@ -8,6 +8,29 @@
     </head>
     <body>
         <?php
+            include("IndexConexion.php");
+
+            //Selecciona la base de datos
+            mysqli_select_db($conexion, "tiendaderopa") or die("Error de selección de base de datos: " . mysqli_error($conexion));
+            
+            //Crear datos para insertar en la tabla 
+            $nombre = "Administrador";
+            $fecha_acceso = date("d-m-Y H:i:s");
+            $accion = "Acceso al portal del administrador";
+            $ip = $_SERVER['REMOTE_ADDR']; // Obtener la IP del usuario
+            $navegador = $_SERVER['HTTP_USER_AGENT']; // Obtener el navegador del usuario
+
+            //Para evitar la inyección de SQL
+            //Prepara la estructura de la sentencia, que no cambia, solo cambian los datos
+            $sentencia = mysqli_prepare($conexion, "INSERT INTO logs_admin (id,nombre,fecha_acceso,accion,ip,navegador) VALUES (?,?,?,?,?,?)");
+            //Se asignan los datos.
+            mysqli_stmt_bind_param($conexion, "ssss", $nombre,$fecha_acceso,$accion,$ip,$navegador);
+            //Se ejecuta la sentencia.
+            mysqli_stmt_execute($sentencia);
+            ?>
+
+
+        <?php
             // Conexión a la base de datos
             include("IndexConexion.php");
 
@@ -21,6 +44,12 @@
             $registros = mysqli_query($conexion, $consultar) or die("Error al insertar el registro" . mysqli_error($conexion));
         ?>
 
+        <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
+        <br>
+        <br>
+        <h1>Portal del Administrador</h1>
+        <br>
+        <br>
         <h2>Eliminar Producto</h2>
         <table border="2">
             <thead>
@@ -192,6 +221,5 @@
             }
         };
         </script>
-        <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
     </body>
 </html>

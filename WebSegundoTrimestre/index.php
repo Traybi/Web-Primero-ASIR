@@ -155,7 +155,7 @@
         <br>
         <br>
         <br>
-        <h2>Modificar Producto</h2>
+        <h2>Enviar Producto</h2>
         <table border="2">
             <thead>
                 <tr>
@@ -187,7 +187,7 @@
                     <td><?php echo $unRegistro[6];?></td>
                     <td><?php echo $unRegistro[7];?></td>
                     <td><?php echo $unRegistro[8];?></td>
-                    <td> <a href="modifica.php?id=<?php echo $unRegistro[0];?>"><img src="images/lapiz.webp" height="30px" width="30px"/></a></td>
+                    <td> <a href="modifica.php?id=<?php echo $unRegistro[0];?>"><img src="images/camion.png" height="30px" width="30px"/></a></td>
                 </tr>
                 <?php
                     }
@@ -246,6 +246,7 @@
                     <td><?php echo $unRegistro[7];?></td>
                     <td><?php echo $unRegistro[8];?></td>
                     <td> <a href="modificacliente.php?id=<?php echo $unRegistro[0];?>"><img src="images/tickresuelto.webp" height="20px" width="30px"/></a></td>
+                    <td> <a href="eliminarconsulta.php?id=<?php echo $unRegistro[0];?>"><img src="images/papelera.png" height="30px" width="30px"/></a></td>
                 </tr>
                 <?php
                     }

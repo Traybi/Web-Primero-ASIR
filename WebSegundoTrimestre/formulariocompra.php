@@ -264,7 +264,7 @@ if (isset($_POST['registro'])) {
     $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
     
     if($ejecutarInsertar) {
-        echo "<script>alert('¡Formulario enviado correctamente!');</script>";
+        echo "<script>alert('¡Compra Realizada!');</script>";
     }
     
     mysqli_close($enlace);

@@ -11,7 +11,7 @@ h1 {
     text-align: center;
     margin-top: 20px;
     text-align: center;
-    font-size: 46px;
+    font-size: 80px;
 }
 
 h2 {
@@ -49,7 +49,12 @@ th {
     border-radius: 50px;
     cursor: pointer;
     font-size: 19px;
-    justify-content: center;
+    display: inline-block; /* Agrega esto */
+    text-align: center; /* Agrega esto */
+    line-height: 1.2; /* Ajusta el espaciado vertical del texto */
+    vertical-align: middle; /* Centra verticalmente */
+    white-space: nowrap; /* Evita que el texto se rompa en líneas */
+    transition: all 0.3s ease; /* Mejora la transición */
 }
 
 .volverinicio:hover {

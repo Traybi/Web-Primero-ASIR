@@ -52,49 +52,6 @@
             mysqli_select_db($conexion, "tiendaderopa");
 
             //Preparar sentencia MySQL
-            $consultar = "SELECT * FROM logs_admin";
-
-            //Ejecutar sentencia y se almacena en la variables '$registros'
-            $registros = mysqli_query($conexion, $consultar) or die("Error al insertar el registro" . mysqli_error($conexion));
-        ?>
-        <h2>Logs Admin</h2>
-        <table border="2">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Fecha Acceso</th>
-                    <th>Accion</th>
-                    <th>IP</th>
-                    <th>Navegador</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <?php
-                    while($unRegistro = mysqli_fetch_row($registros)){
-                ?>
-                <tr>
-                    <td><?php echo $unRegistro[0];?></td>
-                    <td><?php echo $unRegistro[1];?></td>
-                    <td><?php echo $unRegistro[2];?></td>
-                    <td><?php echo $unRegistro[3];?></td>
-                    <td><?php echo $unRegistro[4];?></td>
-                    <td><?php echo $unRegistro[5];?></td>
-                </tr>
-                <?php
-                    }
-                ?>
-            </tbody>
-        </table>
-        <?php
-            // Conexión a la base de datos
-            include("IndexConexion.php");
-
-            //Selección de la base de datos
-            mysqli_select_db($conexion, "tiendaderopa");
-
-            //Preparar sentencia MySQL
             $consultar = "SELECT * FROM pedidos";
 
             //Ejecutar sentencia y se almacena en la variables '$registros'
@@ -253,6 +210,53 @@
                 ?>
             </tbody>
         </table>
+        <br>
+        <br>
+        <?php
+            // Conexión a la base de datos
+            include("IndexConexion.php");
+
+            //Selección de la base de datos
+            mysqli_select_db($conexion, "tiendaderopa");
+
+            //Preparar sentencia MySQL
+            $consultar = "SELECT * FROM logs_admin";
+
+            //Ejecutar sentencia y se almacena en la variables '$registros'
+            $registros = mysqli_query($conexion, $consultar) or die("Error al insertar el registro" . mysqli_error($conexion));
+        ?>
+        <h2>Logs Admin</h2>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Fecha Acceso</th>
+                    <th>Accion</th>
+                    <th>IP</th>
+                    <th>Navegador</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+                    while($unRegistro = mysqli_fetch_row($registros)){
+                ?>
+                <tr>
+                    <td><?php echo $unRegistro[0];?></td>
+                    <td><?php echo $unRegistro[1];?></td>
+                    <td><?php echo $unRegistro[2];?></td>
+                    <td><?php echo $unRegistro[3];?></td>
+                    <td><?php echo $unRegistro[4];?></td>
+                    <td><?php echo $unRegistro[5];?></td>
+                </tr>
+                <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+
+        
         <script>
             let con = prompt("Introduce la contraseña para acceder al portal del Administrador: ");
             let correcta = "administrador"

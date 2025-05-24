@@ -32,3 +32,17 @@ td, th {
 th {
     background-color: #f2f2f2;
 }
+button {
+    padding: 15px 30px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+button:hover {
+    background-color: #818283;
+    transform: translateY(-3px);
+}

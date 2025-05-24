@@ -166,7 +166,7 @@
                     <td><?php echo $unRegistro[6];?></td>
                     <td><?php echo $unRegistro[7];?></td>
                     <td><?php echo $unRegistro[8];?></td>
-                    <td> <a href="modifica.php?id=<?php echo $unRegistro[0];?>"><img src="images/tickresuelto" height="30px" width="30px"/></a></td>
+                    <td> <a href="ayudacliente.php?id=<?php echo $unRegistro[0];?>"><img src="images/tickresuelto.webp" height="20px" width="30px"/></a></td>
                 </tr>
                 <?php
                     }
@@ -181,6 +181,16 @@
             con = prompt("Introduce la contraseña para acceder a la web: ");
             }
             alert ("Bienvenido Administrador. Que tenga muy buen día")
+        </script>
+        <script>
+            window.onscroll = function() {
+            var btn = document.getElementById("btn-top");
+            if (window.pageYOffset > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
         </script>
     </body>
 </html>

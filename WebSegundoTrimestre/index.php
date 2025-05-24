@@ -166,7 +166,7 @@
                     <td><?php echo $unRegistro[6];?></td>
                     <td><?php echo $unRegistro[7];?></td>
                     <td><?php echo $unRegistro[8];?></td>
-                    <td> <a href="ayudacliente.php?id=<?php echo $unRegistro[0];?>"><img src="images/tickresuelto.webp" height="20px" width="30px"/></a></td>
+                    <td> <a href="modificacliente.php?id=<?php echo $unRegistro[0];?>"><img src="images/tickresuelto.webp" height="20px" width="30px"/></a></td>
                 </tr>
                 <?php
                     }
@@ -192,5 +192,6 @@
             }
         };
         </script>
+        <button onclick="window.location.href='inicioweb.html'">Volver a la página principal</button>
     </body>
 </html>

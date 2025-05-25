@@ -4,28 +4,28 @@ $contraseña = "";
 $servidor = "localhost";
 $base_datos = "tiendaderopa";
 
-$connection = mysqli_connect($servidor, $usuario, $contraseña, $base_datos) or die("Error de conexión: " . mysqli_connect_error());
+$enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos) or die("Error de conexión: " . mysqli_connect_error());
 
 if (isset($_POST['registro'])) {
-    $nombre = mysqli_real_escape_string($connection, $_POST["nombre"]);
-    $apellido = mysqli_real_escape_string($connection, $_POST["apellido"]);
-    $email = mysqli_real_escape_string($connection, $_POST["email"]);
-    $telefono = mysqli_real_escape_string($connection, $_POST["telefono"]);
-    $producto = mysqli_real_escape_string($connection, $_POST["producto"]);
-    $cantidad = mysqli_real_escape_string($connection, $_POST["cantidad"]);
-    $pago = mysqli_real_escape_string($connection, $_POST["pago"]);
-    $estado = "procesando";
+    $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
+    $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
+    $email = mysqli_real_escape_string($enlace, $_POST["email"]);
+    $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
+    $producto = mysqli_real_escape_string($enlace, $_POST["producto"]);
+    $cantidad = mysqli_real_escape_string($enlace, $_POST["cantidad"]);
+    $pago = mysqli_real_escape_string($enlace, $_POST["pago"]);
+    $estado = "procesando"; // Estado por defecto
 
     $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, producto, cantidad, pago, estado) 
                     VALUES ('$nombre', '$apellido', '$email', '$telefono', '$producto', '$cantidad', '$pago', '$estado')";
 
-    $ejecutarInsertar = mysqli_query($connection, $insertarDatos) or die("Error de inserción: " . mysqli_error($connection));
+    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos) or die("Error al insertar datos: " . mysqli_error($enlace));
     
     if($ejecutarInsertar) {
-        echo "<script>alert('¡Datos insertados correctamente!');</script>";
+        echo "<script>alert('¡Compra Realizada!');</script>";
     }
     
-    mysqli_close($connection);
+    mysqli_close($enlace);
 }
 ?>
 <!DOCTYPE html>

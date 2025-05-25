@@ -71,7 +71,7 @@
     <script>
         document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
-        document.getElementById('email').addEventListener('blur', validarCorreo);
+        document.getElementById('email').addEventListener('blur', validarEmail);
         document.getElementById('telefono').addEventListener('blur', validarTelefono);
         document.getElementById('producto').addEventListener('blur', validarProducto);
         document.getElementById('cantidad').addEventListener('blur', validarCantidad);

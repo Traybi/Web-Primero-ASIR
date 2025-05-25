@@ -20,9 +20,9 @@
             <input type="text" id="apellido" name="apellido">
             <p class="error-message" id="error-apellido">El apellido es obligatorio y solo debe contener letras.</p>
 
-            <label for="correo">Correo Electrónico </label>
+            <label for="email">Correo Electrónico </label>
             <input type="text" id="email" name="email">
-            <p class="error-message" id="error-correo">Debe ingresar un email válido (ejemplo@ejemplo.com).</p>
+            <p class="error-message" id="error-email">Debe ingresar un email válido (ejemplo@ejemplo.com).</p>
 
             <label for="telefono">Teléfono </label>
             <div id="telefono-container">
@@ -52,7 +52,7 @@
             <label><input type="radio" name="pago" value="tarjeta"> Tarjeta</label>
             <label><input type="radio" name="pago" value="paypal"> PayPal</label>
             <label><input type="radio" name="pago" value="efectivo"> Efectivo</label>
-            <p class="error-message" id="error-metodo-pago">Debe seleccionar un método de pago (Tarjeta, PayPal o Efectivo).</p>
+            <p class="error-message" id="error-pago">Debe seleccionar un método de pago (Tarjeta, PayPal o Efectivo).</p>
         </fieldset>
         <fieldset>
             <input type="checkbox" id="terminos" name="terminos">
@@ -71,7 +71,7 @@
     <script>
         document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
-        document.getElementById('correo').addEventListener('blur', validarCorreo);
+        document.getElementById('email').addEventListener('blur', validarCorreo);
         document.getElementById('telefono').addEventListener('blur', validarTelefono);
         document.getElementById('producto').addEventListener('blur', validarProducto);
         document.getElementById('cantidad').addEventListener('blur', validarCantidad);
@@ -113,16 +113,15 @@
         }
 
         function validarCorreo() {
-            let correo = document.getElementById('correo').value.trim();
-            let correoRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!correo) {
-                mostrarError('correo', 'error-correo', 'El correo electrónico es obligatorio.');
+            let email = document.getElementById('email').value.trim();
+            if (!email) {
+                mostrarError('email', 'error-email', 'El correo electrónico es obligatorio.');
                 return false;
-            } else if (!correoRegex.test(correo)) {
-                mostrarError('correo', 'error-correo', 'Formato inválido. Debe ser ejemplo@ejemplo.com.');
+            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                mostrarError('email', 'error-email', 'Formato inválido. Debe ser ejemplo@ejemplo.com.');
                 return false;
             } else {
-                limpiarError('correo', 'error-correo');
+                limpiarError('email', 'error-email');
                 return true;
             }
         }
@@ -142,7 +141,8 @@
         }
 
         function validarProducto() {
-            if (!document.getElementById('producto').value) {
+            let producto = document.getElementById('producto').value;
+            if (!producto) {
                 mostrarError('producto', 'error-producto', 'Debe seleccionar un producto.');
                 return false;
             } else {
@@ -175,20 +175,21 @@
                 }
             }
             if (!metodoPagoSeleccionado) {
-                mostrarError(null, 'error-metodo-pago', 'Debe seleccionar un método de pago.');
+                document.getElementById('error-pago').style.display = 'block';
                 return false;
             } else {
-                limpiarError(null, 'error-metodo-pago');
+                document.getElementById('error-pago').style.display = 'none';
                 return true;
             }
         }
 
         function validarTerminos() {
-            if (!document.getElementById('terminos').checked) {
-                mostrarError(null, 'error-terminos', 'Debe aceptar los términos y condiciones.');
+            let terminos = document.getElementById('terminos').checked;
+            if (!terminos) {
+                mostrarError('terminos', 'error-terminos', 'Debe aceptar los términos y condiciones.');
                 return false;
             } else {
-                limpiarError(null, 'error-terminos');
+                limpiarError('terminos', 'error-terminos');
                 return true;
             }
         }
@@ -197,7 +198,6 @@
             event.preventDefault();
             let formValido = true;
             
-            // Validar todos los campos antes de enviar
             if (!validarNombre()) formValido = false;
             if (!validarApellido()) formValido = false;
             if (!validarCorreo()) formValido = false;
@@ -208,7 +208,6 @@
             if (!validarTerminos()) formValido = false;
 
             if (formValido) {
-                // Si no hay errores, enviar el formulario
                 this.submit();
             }
         }

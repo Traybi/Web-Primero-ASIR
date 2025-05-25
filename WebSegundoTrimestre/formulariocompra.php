@@ -250,7 +250,7 @@ $enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos) or die(
 if (isset($_POST['registro'])) {
     $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
     $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
-    $email = mysqli_real_escape_string($connection, $_POST["email"]);
+    $email = mysqli_real_escape_string($enlace, $_POST["email"]);
     $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
     $producto = mysqli_real_escape_string($enlace, $_POST["producto"]);
     $cantidad = mysqli_real_escape_string($enlace, $_POST["cantidad"]);

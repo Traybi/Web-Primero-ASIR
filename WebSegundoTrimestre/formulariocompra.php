@@ -20,9 +20,9 @@
             <input type="text" id="apellido" name="apellido">
             <p class="error-message" id="error-apellido">El apellido es obligatorio y solo debe contener letras.</p>
 
-            <label for="email">Correo Electrónico </label>
-            <input type="text" id="email" name="email">
-            <p class="error-message" id="error-email">Debe ingresar un email válido (ejemplo@ejemplo.com).</p>
+                <label for="email">Correo Electrónico </label>
+                <input type="text" id="email" name="email">
+                <p class="error-message" id="error-email">Debe ingresar un email válido (ejemplo@ejemplo.com).</p>
 
             <label for="telefono">Teléfono </label>
             <div id="telefono-container">
@@ -71,7 +71,7 @@
     <script>
         document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
-        document.getElementById('email').addEventListener('blur', validarEmail);
+        document.getElementById('email').addEventListener('blur', validarCorreo);
         document.getElementById('telefono').addEventListener('blur', validarTelefono);
         document.getElementById('producto').addEventListener('blur', validarProducto);
         document.getElementById('cantidad').addEventListener('blur', validarCantidad);
@@ -245,12 +245,12 @@ $contraseña = "";
 $servidor = "localhost";
 $base_datos = "tiendaderopa";
 
-$enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos);
+$enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos) or die("Error de conexión: " . mysqli_connect_error());
 
 if (isset($_POST['registro'])) {
     $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
     $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
-    $email = mysqli_real_escape_string($enlace, $_POST["email"]);
+    $email = mysqli_real_escape_string($connection, $_POST["email"]);
     $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
     $producto = mysqli_real_escape_string($enlace, $_POST["producto"]);
     $cantidad = mysqli_real_escape_string($enlace, $_POST["cantidad"]);
@@ -260,7 +260,7 @@ if (isset($_POST['registro'])) {
     $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, producto, cantidad, pago, estado) 
                     VALUES ('$nombre', '$apellido', '$email', '$telefono', '$producto', '$cantidad', '$pago', '$estado')";
 
-    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos) or die("Error al insertar datos: " . mysqli_error($enlace));
     
     if($ejecutarInsertar) {
         echo "<script>alert('¡Compra Realizada!');</script>";

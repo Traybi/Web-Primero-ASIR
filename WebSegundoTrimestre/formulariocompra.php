@@ -20,9 +20,9 @@
             <input type="text" id="apellido" name="apellido">
             <p class="error-message" id="error-apellido">El apellido es obligatorio y solo debe contener letras.</p>
 
-            <label for="email">Correo Electrónico </label>
+            <label for="correo">Correo Electrónico </label>
             <input type="text" id="email" name="email">
-            <p class="error-message" id="error-email">Debe ingresar un email válido (ejemplo@ejemplo.com).</p>
+            <p class="error-message" id="error-correo">Debe ingresar un email válido (ejemplo@ejemplo.com).</p>
 
             <label for="telefono">Teléfono </label>
             <div id="telefono-container">
@@ -71,7 +71,7 @@
     <script>
         document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
-        document.getElementById('email').addEventListener('blur', validarCorreo);
+        document.getElementById('correo').addEventListener('blur', validarCorreo);
         document.getElementById('telefono').addEventListener('blur', validarTelefono);
         document.getElementById('producto').addEventListener('blur', validarProducto);
         document.getElementById('cantidad').addEventListener('blur', validarCantidad);
@@ -113,15 +113,15 @@
         }
 
         function validarCorreo() {
-            let email = document.getElementById('email').value.trim();
-            if (!email) {
-                mostrarError('email', 'error-email', 'El correo electrónico es obligatorio.');
+            let correo = document.getElementById('correo').value.trim();
+            if (!correo) {
+                mostrarError('correo', 'error-correo', 'El correo electrónico es obligatorio.');
                 return false;
-            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-                mostrarError('email', 'error-email', 'Formato inválido. Debe ser ejemplo@ejemplo.com.');
+            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(correo)) {
+                mostrarError('correo', 'error-correo', 'Formato inválido. Debe ser ejemplo@ejemplo.com.');
                 return false;
             } else {
-                limpiarError('email', 'error-email');
+                limpiarError('correo', 'error-correo');
                 return true;
             }
         }

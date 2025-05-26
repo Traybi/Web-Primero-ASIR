@@ -1,5 +1,4 @@
 body {
-    background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -8,6 +7,7 @@ body {
 }
 
 .contenedor {
+    background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
     background-size: cover;
     max-width: 1000px;
     margin: 0 auto;

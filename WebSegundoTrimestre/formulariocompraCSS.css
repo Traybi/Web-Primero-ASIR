@@ -1,94 +1,129 @@
 body {
-    font-family: 'Arial', sans-serif;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
-    line-height: 1.5;
 }
 
 .contenedor {
-    background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
-    background-size: cover;
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
-}
-
-form {
-    background-color: rgba(255, 255, 255);
-    padding: 20px;
-    border-radius: 8px;
+    margin-bottom: 30px;
 }
 
 fieldset {
-    margin-bottom: 15px;
-    padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
 }
 
 legend {
     font-weight: bold;
-    color: #444;
+    color: #555;
     padding: 0 10px;
 }
 
 label {
     display: block;
-    margin-top: 10px;
-    color: #555;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
 }
 
-input, select, textarea {
+input, select {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     box-sizing: border-box;
+    font-size: 14px;
 }
 
-.error {
-    border: 2px solid red;
+/* Teléfono con prefijo */
+#telefono-container {
+    display: flex;
+    align-items: center;
 }
 
-.mensaje-error {
-    color: red;
-    font-size: 12px;
-    display: block;
-    margin-top: 3px;
-}
-
-button {
-    width: 45%;
+#prefijo {
+    background-color: #e9e9e9;
+    border: 1px solid #ccc;
     padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+}
+
+#telefono {
+    border-radius: 0 5px 5px 0;
+}
+
+/* Radio buttons */
+input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+label input[type="radio"] {
+    margin-top: 0;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Botones */
+button {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button[type="submit"] {
     background-color: #4a6fa5;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 20px;
+    margin-right: 4%;
+}
+
+button[type="submit"]:hover {
+    background-color: #3a5f95;
 }
 
 button[type="reset"] {
-    background-color: #b1b0b0;
+    background-color: #999;
+    color: white;
 }
 
-.opcion-genero {
-    margin-bottom: 15px;
+button[type="reset"]:hover {
+    background-color: #777;
 }
 
-#info {
+/* Errores */
+.error {
+    border-color: red !important;
+    background-color: #ffe6e6;
+}
+
+.error-message {
+    color: red;
     font-size: 12px;
-    color: #666;
+    display: none;
     margin-top: 5px;
 }

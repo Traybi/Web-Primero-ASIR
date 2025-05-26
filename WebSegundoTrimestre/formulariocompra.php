@@ -69,34 +69,4 @@
     </form>
     <script src="formulariocompraJS.js"></script>
 </body>
-<?php
-$usuario = "root";
-$contraseña = "";
-$servidor = "localhost";
-$base_datos = "tiendaderopa";
-
-$enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos);
-
-if (isset($_POST['registro'])) {
-    $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
-    $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
-    $email = mysqli_real_escape_string($enlace, $_POST["email"]);
-    $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
-    $producto = mysqli_real_escape_string($enlace, $_POST["producto"]);
-    $cantidad = mysqli_real_escape_string($enlace, $_POST["cantidad"]);
-    $pago = mysqli_real_escape_string($enlace, $_POST["pago"]);
-    $estado = "procesando"; // Estado por defecto
-
-    $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, producto, cantidad, pago, estado) 
-                    VALUES ('$nombre', '$apellido', '$email', '$telefono', '$producto', '$cantidad', '$pago', '$estado')";
-
-    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
-    
-    if($ejecutarInsertar) {
-        echo "<script>alert('¡Compra Realizada!');</script>";
-    }
-    
-    mysqli_close($enlace);
-}
-?>
 </html>

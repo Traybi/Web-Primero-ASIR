@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="contenedor">
-        <h1>Formulario de Contacto</h1>
-
+        <h1 class=fuente1>Formulario de Contacto</h1>
+    </div>
         <form id="formulario-contacto" action="ayudacliente.php" method="post">
             <fieldset>
                 <legend>Datos Personales</legend>

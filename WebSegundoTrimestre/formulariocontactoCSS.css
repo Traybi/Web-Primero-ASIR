@@ -1,94 +1,129 @@
 body {
-    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    padding: 20px;
-    line-height: 1.5;
+    padding: 0;
 }
 
+/* Encabezado igual que productos-hombre */
 .contenedor {
     background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
-    background-size: cover;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
+    padding-top: 5px;
+    margin-bottom: 50px;
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
 }
 
+h1.fuente1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 100px;
+    letter-spacing: 35px;
+}
+
+/* Formulario simple */
 form {
-    background-color: rgba(255, 255, 255);
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid #ddd;
 }
 
 fieldset {
-    margin-bottom: 15px;
-    padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
 legend {
     font-weight: bold;
-    color: #444;
     padding: 0 10px;
 }
 
 label {
     display: block;
     margin-top: 10px;
-    color: #555;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-.error {
-    border: 2px solid red;
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
 }
 
-.mensaje-error {
-    color: red;
-    font-size: 12px;
-    display: block;
-    margin-top: 3px;
+/* Opciones de género */
+.opciongenero {
+    margin-bottom: 10px;
 }
 
-button {
-    width: 45%;
-    padding: 10px;
-    background-color: #4a6fa5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-right: 20px;
+.opciongenero label {
+    display: inline;
+    margin-left: 5px;
+    font-weight: normal;
 }
 
-button[type="reset"] {
-    background-color: #b1b0b0;
+#telefono-container {
+    display: flex;
+    align-items: center;
 }
 
-.opcion-genero {
-    margin-bottom: 15px;
+#telefono-container input {
+    flex: 1;
 }
 
+#prefijo {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Contador de caracteres */
 #info {
     font-size: 12px;
     color: #666;
     margin-top: 5px;
+}
+
+/* Mensajes de error */
+.error {
+    border: 2px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Botones */
+.botones {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button[type="reset"] {
+    background-color: #666;
 }

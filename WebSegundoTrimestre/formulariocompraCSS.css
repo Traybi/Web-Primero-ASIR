@@ -1,99 +1,103 @@
 body {
     background-color: #f4f4f4;
-    font-family: 'Times New Roman', Times, serif
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
 }
+
+/* Encabezado igual que productos-hombre */
 .contenedor {
     background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
     padding-top: 5px;
+    margin-bottom: 50px;
 }
+
 h1 {
     text-align: center;
 }
-h1.fuente1{
+
+h1.fuente1 {
     font-family: 'Times New Roman', Times, serif;
     font-size: 100px;
     letter-spacing: 35px;
 }
-.enlacescentro{
-    margin-top: 10px;
-    text-align: center;
-    padding: 5px 0;
-    position: relative;
-    padding-bottom: 40px;
-}
-a{
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin: 0 15px;
-    font-size: 18px;
-}
+
+/* Formulario simple */
 form {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 0 auto;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
+    border: 1px solid #ddd;
 }
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
 label {
     display: block;
     margin-top: 10px;
+    margin-bottom: 5px;
     font-weight: bold;
 }
-input, select, textarea {
-    width: 95%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
+
+input, select {
+    width: 100%;
+    padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
-button {
-    width: 48%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
 }
-#btn-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #222; 
-    color: white;
-    border: none;
-    border-radius: 8px; 
-    display: none;
-    justify-content: center;
+
+#telefono-container {
+    display: flex;
     align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    font-size: 22px;
-    text-align: center;
 }
+
+#telefono-container input {
+    flex: 1;
+}
+
+#prefijo {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Mensajes de error */
 .error {
     border: 2px solid red;
 }
+
 .error-message {
     color: red;
-    font-size: 14px;
+    font-size: 12px;
+    margin-top: 5px;
     display: none;
 }
+
+/* Botones */
 button {
-    width: 48%;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #333;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
 }

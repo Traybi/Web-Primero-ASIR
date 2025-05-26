@@ -1,146 +1,118 @@
 body {
-    background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-/* Encabezado */
+/* Encabezado igual que formulario de compra */
 .contenedor {
     background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
-    padding: 30px;
+    padding-top: 5px;
+    margin-bottom: 100px;
+}
+
+h1 {
     text-align: center;
-    margin-bottom: 20px;
-    border-radius: 8px;
 }
 
-.contenedor h1 {
-    margin: 0;
-    font-size: 36px;
-    color: #333;
-    font-weight: bold;
+h1.fuente1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 100px;
+    letter-spacing: 35px;
 }
 
-/* Formulario */
+/* Formulario igual que formulario de compra */
 form {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ffffff;
 }
 
 fieldset {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 legend {
     font-weight: bold;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 label {
     display: block;
+    margin-top: 10px;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-input[type="text"], 
-input[type="tel"], 
-input[type="email"], 
-select, 
-textarea {
+input, select, textarea {
     width: 100%;
     padding: 8px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 80px;
-}
-
-/* Radio buttons y checkboxes */
-input[type="radio"], 
-input[type="checkbox"] {
+input[type="radio"], input[type="checkbox"] {
     width: auto;
     margin-right: 5px;
 }
 
-.opciongenero {
-    margin: 8px 0;
+/* Textarea específico */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.opciongenero label {
-    display: inline;
-    font-weight: normal;
-    margin-left: 5px;
-}
-
-/* Teléfono */
 #telefono-container {
     display: flex;
     align-items: center;
-}
-
-#prefijo {
-    margin-right: 10px;
-    font-weight: bold;
 }
 
 #telefono-container input {
     flex: 1;
 }
 
+#prefijo {
+    margin-right: 8px;
+    font-weight: bold;
+}
+
 /* Contador de caracteres */
 #info {
     font-size: 12px;
     color: #666;
-    margin-top: -5px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 0;
 }
 
-/* Errores */
+/* Mensajes de error */
 .error {
-    border-color: red !important;
+    border: 2px solid red;
 }
 
 .error-message {
     color: red;
     font-size: 12px;
-    margin-top: -8px;
-    margin-bottom: 10px;
+    margin-top: 5px;
     display: none;
 }
 
-/* Botones */
-.botones {
-    text-align: center;
-    margin-top: 20px;
-}
-
+/* Botones iguales que formulario de compra */
 button {
     padding: 10px 20px;
-    margin: 0 5px;
+    background-color: #333;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-}
-
-button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-}
-
-button[type="reset"] {
-    background-color: #6c757d;
-    color: white;
+    margin-right: 10px;
+    margin-top: 15px;
 }

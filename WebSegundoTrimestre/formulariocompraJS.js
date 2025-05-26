@@ -1,4 +1,4 @@
-      document.getElementById('nombre').addEventListener('blur', validarNombre);
+        document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
         document.getElementById('correo').addEventListener('blur', validarCorreo);
         document.getElementById('telefono').addEventListener('blur', validarTelefono);

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
     $producto = mysqli_real_escape_string($enlace, $_POST["producto"]);
     $cantidad = mysqli_real_escape_string($enlace, $_POST["cantidad"]);
-    $pago = mysqli_real_escape_string($enlace, $_POST["pago"]);
+    $pago = mysqli_real_escape_string($enlace, $_POST["pago"] ?? null);
     $estado = "procesando"; // Estado por defecto
 
     $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, producto, cantidad, pago, estado) 
@@ -103,7 +103,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="reset">Restablecer</button>
         </div>
     </form>
-
     <script src="formulariocompraJS.js"></script>
 </body>
 </html>

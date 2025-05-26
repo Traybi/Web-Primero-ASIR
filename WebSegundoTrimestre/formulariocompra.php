@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $estado = "procesando"; // Estado por defecto
 
     $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, producto, cantidad, pago, estado) 
-                    VALUES ($nombre, $apellido, $email, $telefono, $producto, $cantidad, $pago, $estado)";
+                    VALUES ('$nombre', '$apellido', '$email', '$telefono', '$producto', '$cantidad', '$pago', '$estado')";
 
     $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
 
-    if ($ejecutarInsertar) { header('Location: /'); exit(); } else { printf("Connect failed: %s\n", $enlace->error); }
+    if ($ejecutarInsertar) { header('Location: registro.php'); exit(); } else { printf("Connect failed: %s\n", $enlace->error); }
 
     mysqli_close($enlace);
 }

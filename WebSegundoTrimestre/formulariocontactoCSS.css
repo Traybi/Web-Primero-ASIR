@@ -1,55 +1,52 @@
 body {
     background-color: #f4f4f4;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
-/* Encabezado simple */
+/* Encabezado */
 .contenedor {
     background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 .contenedor h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 60px;
-    letter-spacing: 10px;
     margin: 0;
+    font-size: 36px;
     color: #333;
+    font-weight: bold;
 }
 
 /* Formulario */
 form {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 fieldset {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
 legend {
     font-weight: bold;
-    padding: 0 10px;
-    color: #333;
+    padding: 0 5px;
 }
 
 label {
     display: block;
-    margin-top: 15px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #555;
 }
 
 input[type="text"], 
@@ -58,96 +55,92 @@ input[type="email"],
 select, 
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 14px;
 }
 
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Radio buttons y checkboxes */
 input[type="radio"], 
 input[type="checkbox"] {
     width: auto;
-    margin-right: 8px;
+    margin-right: 5px;
 }
 
-/* Contenedor del teléfono */
+.opciongenero {
+    margin: 8px 0;
+}
+
+.opciongenero label {
+    display: inline;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+/* Teléfono */
 #telefono-container {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 #prefijo {
+    margin-right: 10px;
     font-weight: bold;
-    color: #333;
 }
 
 #telefono-container input {
     flex: 1;
 }
 
-/* Opciones de género */
-.opciongenero {
-    margin: 10px 0;
-}
-
-.opciongenero label {
-    display: inline;
-    margin-left: 5px;
-    margin-top: 0;
-    font-weight: normal;
-}
-
-/* Info del contador */
+/* Contador de caracteres */
 #info {
     font-size: 12px;
     color: #666;
-    margin-top: 5px;
+    margin-top: -5px;
+    margin-bottom: 10px;
 }
 
-/* Mensajes de error */
+/* Errores */
 .error {
-    border: 2px solid #e74c3c !important;
+    border-color: red !important;
 }
 
 .error-message {
-    color: #e74c3c;
+    color: red;
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: -8px;
+    margin-bottom: 10px;
     display: none;
 }
 
 /* Botones */
 .botones {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 button {
-    padding: 12px 25px;
-    margin: 0 10px;
+    padding: 10px 20px;
+    margin: 0 5px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 14px;
 }
 
 button[type="submit"] {
-    background-color: #333;
+    background-color: #007bff;
     color: white;
-}
-
-button[type="submit"]:hover {
-    background-color: #555;
 }
 
 button[type="reset"] {
-    background-color: #666;
+    background-color: #6c757d;
     color: white;
-}
-
-button[type="reset"]:hover {
-    background-color: #888;
 }

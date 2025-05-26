@@ -1,99 +1,94 @@
 body {
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    font-family: 'Times New Roman', Times, serif
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
 }
+
 .contenedor {
     background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
-    padding-top: 5px;
+    background-size: cover;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
 }
+
 h1 {
     text-align: center;
-}
-h1.fuente1{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 100px;
-    letter-spacing: 35px;
-}
-.enlacescentro{
-    margin-top: 10px;
-    text-align: center;
-    padding: 5px 0;
-    position: relative;
-    padding-bottom: 40px;
-}
-a{
-    text-decoration: none;
     color: #333;
-    font-weight: bold;
-    margin: 0 15px;
-    font-size: 18px;
+    margin-bottom: 20px;
 }
+
 form {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #fff;
+    background-color: rgba(255, 255, 255);
     padding: 20px;
     border-radius: 8px;
 }
+
+fieldset {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    color: #444;
+    padding: 0 10px;
+}
+
 label {
     display: block;
     margin-top: 10px;
-    font-weight: bold;
+    color: #555;
 }
+
 input, select, textarea {
-    width: 95%;
+    width: 100%;
     padding: 10px;
     margin-top: 5px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
-button {
-    width: 48%;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-}
-#btn-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #222; 
-    color: white;
-    border: none;
-    border-radius: 8px; 
-    display: none;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    font-size: 22px;
-    text-align: center;
-}
+
 .error {
     border: 2px solid red;
 }
-.error-message {
+
+.mensaje-error {
     color: red;
-    font-size: 14px;
-    display: none;
+    font-size: 12px;
+    display: block;
+    margin-top: 3px;
 }
+
 button {
-    width: 48%;
+    width: 45%;
     padding: 10px;
-    background-color: #333;
+    background-color: #4a6fa5;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
     margin-top: 10px;
+    margin-right: 20px;
+}
+
+button[type="reset"] {
+    background-color: #b1b0b0;
+}
+
+.opcion-genero {
+    margin-bottom: 15px;
+}
+
+#info {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
 }

@@ -1,6 +1,6 @@
-        document.getElementById('nombre').addEventListener('blur', validarNombre);
+      document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
-        document.getElementById('email').addEventListener('blur', validarCorreo);
+        document.getElementById('correo').addEventListener('blur', validarCorreo);
         document.getElementById('telefono').addEventListener('blur', validarTelefono);
         document.getElementById('producto').addEventListener('blur', validarProducto);
         document.getElementById('cantidad').addEventListener('blur', validarCantidad);
@@ -42,15 +42,16 @@
         }
 
         function validarCorreo() {
-            let email = document.getElementById('email').value.trim();
-            if (!email) {
-                mostrarError('email', 'error-email', 'El correo electrónico es obligatorio.');
+            let correo = document.getElementById('correo').value.trim();
+            let correoRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!correo) {
+                mostrarError('correo', 'error-correo', 'El correo electrónico es obligatorio.');
                 return false;
-            } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-                mostrarError('email', 'error-email', 'Formato inválido. Debe ser ejemplo@ejemplo.com.');
+            } else if (!correoRegex.test(correo)) {
+                mostrarError('correo', 'error-correo', 'Formato inválido. Debe ser ejemplo@ejemplo.com.');
                 return false;
             } else {
-                limpiarError('email', 'error-email');
+                limpiarError('correo', 'error-correo');
                 return true;
             }
         }
@@ -70,8 +71,7 @@
         }
 
         function validarProducto() {
-            let producto = document.getElementById('producto').value;
-            if (!producto) {
+            if (!document.getElementById('producto').value) {
                 mostrarError('producto', 'error-producto', 'Debe seleccionar un producto.');
                 return false;
             } else {
@@ -104,21 +104,20 @@
                 }
             }
             if (!metodoPagoSeleccionado) {
-                document.getElementById('error-pago').style.display = 'block';
+                mostrarError(null, 'error-metodo-pago', 'Debe seleccionar un método de pago.');
                 return false;
             } else {
-                document.getElementById('error-pago').style.display = 'none';
+                limpiarError(null, 'error-metodo-pago');
                 return true;
             }
         }
 
         function validarTerminos() {
-            let terminos = document.getElementById('terminos').checked;
-            if (!terminos) {
-                mostrarError('terminos', 'error-terminos', 'Debe aceptar los términos y condiciones.');
+            if (!document.getElementById('terminos').checked) {
+                mostrarError(null, 'error-terminos', 'Debe aceptar los términos y condiciones.');
                 return false;
             } else {
-                limpiarError('terminos', 'error-terminos');
+                limpiarError(null, 'error-terminos');
                 return true;
             }
         }
@@ -127,6 +126,7 @@
             event.preventDefault();
             let formValido = true;
             
+            // Validar todos los campos antes de enviar
             if (!validarNombre()) formValido = false;
             if (!validarApellido()) formValido = false;
             if (!validarCorreo()) formValido = false;
@@ -137,6 +137,7 @@
             if (!validarTerminos()) formValido = false;
 
             if (formValido) {
+                // Si no hay errores, enviar el formulario
                 this.submit();
             }
         }

@@ -40,8 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <h1>Formulario de Compra</h1>
-
+    <div class=contenedor>
+        <h1 class="fuente1">Formulario de Compra</h1>
+    </div>
     <form id="formulario-compra" method="post">
         <fieldset>
             <legend>Datos Personales</legend>

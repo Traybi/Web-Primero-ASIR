@@ -63,9 +63,9 @@ function cambiarImagen() {
     let img = document.getElementById("image");
 
     if (img.src.includes("Imagen1.jpg")) {
-        img.src = "Imagen2.jpg";
+        img.src = "images/Imagen2.jpg";
     } else {
-        img.src = "Imagen1.jpg";
+        img.src = "images/Imagen1.jpg";
     }
 }
 

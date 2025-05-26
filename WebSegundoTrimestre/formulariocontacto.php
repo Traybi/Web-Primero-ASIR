@@ -275,7 +275,7 @@ if (isset($_POST['ayudacliente'])) {
     $ejecutarInsertar = mysqli_query($connection, $insertarDatos) or die("Error de inserción: " . mysqli_error($connection));
     
     if($ejecutarInsertar) {
-        echo "<script>alert('¡Datos insertados correctamente!');</script>";
+        echo "<script>alert('¡Formulario Enviado Correctamente!');</script>";
     }
     
     mysqli_close($connection);

@@ -8,8 +8,8 @@ body {
   background-image: url('images/fondo.jpg');
 }
 
-.form-register {
-  width: 400px;
+.formulario-compra {
+  width: 100%;
   background: #24303c;
   padding: 30px;
   margin: auto;
@@ -20,12 +20,13 @@ body {
   box-shadow: 7px 13px 37px #000;
 }
 
-.form-register h4 {
+.formulario-compra h1 {
+  text-align: center;
   font-size: 22px;
   margin-bottom: 20px;
 }
 
-.controls {
+label {
   width: 100%;
   background: #24303c;
   padding: 10px;
@@ -37,24 +38,24 @@ body {
   color: white;
 }
 
-.form-register p {
+.formulario-compra p {
   height: 40px;
   text-align: center;
   font-size: 18px;
   line-height: 40px;
 }
 
-.form-register a {
+.formulario-compra a {
   color: white;
   text-decoration: none;
 }
 
-.form-register a:hover {
+.formulario-compra a:hover {
   color: white;
   text-decoration: underline;
 }
 
-.form-register .botons {
+.formulario-compra .botons {
   width: 100%;
   background: #1f53c5;
   border: none;

@@ -9,7 +9,7 @@ body {
 .contenedor {
     background-image: url(https://static.vecteezy.com/system/resources/previews/005/081/882/non_2x/banner-abstract-geometric-white-and-gray-color-background-illustration-free-vector.jpg);
     padding-top: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 h1 {
@@ -26,10 +26,10 @@ h1.fuente1 {
 form {
     max-width: 600px;
     margin: 0 auto;
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
 }
 
 fieldset {

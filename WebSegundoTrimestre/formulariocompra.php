@@ -99,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div>
             <button type="submit" name="registro">Enviar Pedido</button>
             <button type="reset">Restablecer</button>
+            <button type="button" onclick="location.href='inicioweb.html'">Volver al Inicio</button>
         </div>
     </form>
 

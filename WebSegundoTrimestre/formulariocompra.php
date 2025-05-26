@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 $usuario = "root";
 $contraseña = "";
 $servidor = "localhost";

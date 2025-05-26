@@ -1,6 +1,6 @@
         document.getElementById('nombre').addEventListener('blur', validarNombre);
         document.getElementById('apellido').addEventListener('blur', validarApellido);
-        document.getElementById('correo').addEventListener('blur', validarCorreo);
+        document.getElementById('correo').addEventListener('change', validarCorreo);
         document.getElementById('telefono').addEventListener('blur', validarTelefono);
         document.getElementById('producto').addEventListener('blur', validarProducto);
         document.getElementById('cantidad').addEventListener('blur', validarCantidad);

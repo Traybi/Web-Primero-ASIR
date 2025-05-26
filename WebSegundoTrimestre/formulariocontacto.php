@@ -77,7 +77,6 @@
                 <button type="reset">Restablecer</button>
             </div>
         </form>
-    </div>
 
     <script src="formulariocontactoJS.js"></script>
 </body>

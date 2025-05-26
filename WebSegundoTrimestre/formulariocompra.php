@@ -22,10 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
 
-    if ($ejecutarInsertar) {
-        header('Location: /');
-        exit();
-    }
+    if ($ejecutarInsertar) { header('Location: /'); exit(); } else { printf("Connect failed: %s\n", $enlace->error); }
 
     mysqli_close($enlace);
 }

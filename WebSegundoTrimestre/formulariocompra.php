@@ -1,51 +1,15 @@
-<?php
-
-$usuario = "root";
-$contraseña = "";
-$servidor = "localhost";
-$base_datos = "tiendaderopa";
-
-$enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos);
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
-    $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
-    $email = mysqli_real_escape_string($enlace, $_POST["email"]);
-    $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
-    $producto = mysqli_real_escape_string($enlace, $_POST["producto"]);
-    $cantidad = mysqli_real_escape_string($enlace, $_POST["cantidad"]);
-    $pago = mysqli_real_escape_string($enlace, $_POST["pago"] ?? null);
-    $estado = "procesando"; // Estado por defecto
-
-    $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, producto, cantidad, pago, estado) 
-                    VALUES ($nombre, $apellido, $email, $telefono, $producto, $cantidad, $pago, $estado)";
-
-    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
-
-    if ($ejecutarInsertar) {
-        header('Location: /');
-        exit();
-    }
-
-    mysqli_close($enlace);
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Compra</title>
     <link rel="stylesheet" href="formulariocompraCSS.css">
 </head>
-
 <body>
     <h1>Formulario de Compra</h1>
-
-    <form id="formulario-compra" method="post">
+    
+    <form id="formulario-compra" action="registro.php" method="post">
         <fieldset>
             <legend>Datos Personales</legend>
             <label for="nombre">Nombre </label>
@@ -66,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="tel" id="telefono" name="telefono" maxlength="9" placeholder="Introduce tu número de teléfono (9 dígitos)" />
             </div>
             <p class="error-message" id="error-telefono">El teléfono debe contener exactamente 9 dígitos numéricos.</p>
-
+            
         </fieldset>
         <fieldset>
             <legend>Información del Pedido</legend>
@@ -105,4 +69,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
     <script src="formulariocompraJS.js"></script>
 </body>
+<?php
+$usuario = "root";
+$contraseña = "";
+$servidor = "localhost";
+$base_datos = "tiendaderopa";
+
+$enlace = mysqli_connect($servidor, $usuario, $contraseña, $base_datos);
+
+if (isset($_POST['registro'])) {
+    $nombre = mysqli_real_escape_string($enlace, $_POST["nombre"]);
+    $apellido = mysqli_real_escape_string($enlace, $_POST["apellido"]);
+    $email = mysqli_real_escape_string($enlace, $_POST["email"]);
+    $telefono = mysqli_real_escape_string($enlace, $_POST["telefono"]);
+    $producto = mysqli_real_escape_string($enlace, $_POST["producto"]);
+    $cantidad = mysqli_real_escape_string($enlace, $_POST["cantidad"]);
+    $pago = mysqli_real_escape_string($enlace, $_POST["pago"]);
+    $estado = "procesando"; // Estado por defecto
+
+    $insertarDatos = "INSERT INTO pedidos (nombre, apellido, email, telefono, producto, cantidad, pago, estado) 
+                    VALUES ('$nombre', '$apellido', '$email', '$telefono', '$producto', '$cantidad', '$pago', '$estado')";
+
+    $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+    
+    if($ejecutarInsertar) {
+        echo "<script>alert('¡Compra Realizada!');</script>";
+    }
+    
+    mysqli_close($enlace);
+}
+?>
 </html>
